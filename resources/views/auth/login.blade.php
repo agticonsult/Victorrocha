@@ -47,16 +47,16 @@
                                             @method('POST')
                                             @include('errors.alerts')
                                             @include('errors.errors')
-                                            <div class="mb-3">
+                                            {{-- <div class="mb-3">
                                                 <label for="email">Email</label>
                                                 <input type="email" name="email" id="email" class="form-control form-control-lg" placeholder="Digite seu email" value="{{ old('email') }}">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="password">Senha</label>
                                                 <input type="password" name="password" id="password" class="form-control form-control-lg" placeholder="Digite sua senha">
-                                            </div>
+                                            </div> --}}
                                             <div class="mt-3">
-                                                <button type="submit" class="btn btn-lg btn-success" style="width: 100%; margin-bottom: 0.7rem">Entrar</button>
+                                                {{-- <button type="submit" class="btn btn-lg btn-success" style="width: 100%; margin-bottom: 0.7rem">Entrar</button> --}}
                                                 <a href="{{ route('pessoa.create') }}" class="btn btn-lg btn-primary" style="width: 100%;">Registrar-se</a>
                                             </div>
                                         </form>
