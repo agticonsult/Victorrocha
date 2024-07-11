@@ -17,7 +17,15 @@ class PessoaController extends Controller
      */
     public function index()
     {
-        //
+        try{
+            $pessoas = Pessoa::where('ativo', Pessoa::ATIVO)->paginate(10);
+
+            return view('pessoa.index', compact('pessoas'));
+
+        }
+        catch (\Exception $ex) {
+            return redirect()->back()->with('erro', 'Entre em contato com o administrador do sistema');
+        }
     }
 
     /**
@@ -46,6 +54,9 @@ class PessoaController extends Controller
     public function store(PessoaStoreRequest $request)
     {
         try{
+            if ($request->reuniao != 1 && $request->reunia != 0) {
+                return redirect()->back()->with('erro', 'Opção reunião inválida.');
+            }
 
             Pessoa::create($request->validated());
 

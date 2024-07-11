@@ -47,17 +47,17 @@
                     Páginas
                 </li>
 
-                <li class="sidebar-item {{ Route::current()->uri == 'home' ? 'active' : null }}">
-                    <a href="{{ route('home') }}" class="sidebar-link">
+                <li class="sidebar-item {{ Route::current()->uri == 'perfil' ? 'active' : null }}">
+                    <a href="{{ route('perfil') }}" class="sidebar-link">
                         <i class="fas fa-user"></i>
                         Dados do Usuário
                     </a>
                 </li>
 
-                <li class="sidebar-item {{ Route::current()->uri == 'endereco' ? 'active' : null }}">
-                    <a href="{{ route('endereco.index') }}" class="sidebar-link">
-                        <i class="fas fa-map"></i>
-                        Endereço
+                <li class="sidebar-item {{ Route::current()->uri == 'listagem-cadastros' ? 'active' : null }}">
+                    <a href="{{ route('listar.pessoas') }}" class="sidebar-link">
+                        <i class="fas fa-user-friends"></i>
+                        Pessoas
                     </a>
                 </li>
             </ul>
@@ -126,7 +126,7 @@
                     <div class="col-6 text-right">
                         <p class="mb-0">
                             {{-- &copy; 2022 - <a href="" class="text-muted">Cadastro de endereços</a> --}}
-                            © <?php echo date('Y'); ?> - <a href="" class="text-muted">Sistema Teste</a>
+                            © <?php echo date('Y'); ?> - <a href="http://agile.inf.br" class="text-muted" target="__blank">Agile Tecnologia</a>
                         </p>
                     </div>
                 </div>
@@ -149,33 +149,5 @@
 <script src="{{ asset('js/datatables.min.js') }}"></script>
 <script src="{{asset('jquery-mask/src/jquery.mask.js')}}"></script>
 
-<script>
-    $(document).ready(function() {
-        $('#datatable-responsive').dataTable({
-            "order": [[ 0, "asc" ]],
-            "columnDefs": [
-                {
-                    "targets": [ 0 ],
-                    "searchable": false,
-                    "visible": false
-                }
-            ],
-            "oLanguage": {
-                "sLengthMenu": "Mostrar _MENU_ registros por página",
-                "sZeroRecords": "Nenhum registro encontrado",
-                "sInfo": "Mostrando _START_ / _END_ de _TOTAL_ registro(s)",
-                "sInfoEmpty": "Mostrando 0 / 0 de 0 registros",
-                "sInfoFiltered": "(filtrado de _MAX_ registros)",
-                "sSearch": "Pesquisar: ",
-                "oPaginate": {
-                    "sFirst": "Início",
-                    "sPrevious": "Anterior",
-                    "sNext": "Próximo",
-                    "sLast": "Último"
-                }
-            },
-        });
-    });
-</script>
 @yield('scripts')
 </html>

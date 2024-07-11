@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\PessoaController;
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,11 +23,17 @@ use Illuminate\Support\Facades\Route;
 
 //Login
 Route::get('/', [LoginController::class, 'index'])->name('login');
-// Route::post('/autenticacao', [LoginController::class, 'autenticacao'])->name('login.autenticacao');
-// Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
+Route::post('/autenticacao', [LoginController::class, 'autenticacao'])->name('login.autenticacao');
+Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
  // Usuarios/Clientes
  Route::group(['prefix' => '/pessoa', 'as' => 'pessoa.'], function() {
     Route::get('/create', [PessoaController::class, 'create'])->name('create');
     Route::post('/store', [PessoaController::class, 'store'])->name('store');
+});
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/perfil', [UsuarioController::class, 'perfil'])->name('perfil');
+
+    Route::get('/listagem-cadastros', [PessoaController::class, 'index'])->name('listar.pessoas');
 });

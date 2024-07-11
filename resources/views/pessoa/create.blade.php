@@ -144,7 +144,7 @@
                 <div class="row text-muted">
                     <div class="col-12 text-right">
                         <p class="mb-0">
-                            © <?php echo date('Y'); ?> - <a href="http://agile.inf.br" target="_blank" class="text-muted">Agile Tecnologia</a>
+                            © <?php echo date('Y'); ?> - <a href="http://agile.inf.br" class="text-muted" target="__blank">Agile Tecnologia</a>
                         </p>
                     </div>
                 </div>
