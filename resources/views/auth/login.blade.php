@@ -57,7 +57,6 @@
                                             </div>
                                             <div class="mt-3">
                                                 <button type="submit" class="btn btn-lg btn-success" style="width: 100%; margin-bottom: 0.7rem">Entrar</button>
-                                                <a href="{{ route('pessoa.create') }}" class="btn btn-lg btn-primary" style="width: 100%;">Cadastrar-se</a>
                                             </div>
                                         </form>
                                     </div>

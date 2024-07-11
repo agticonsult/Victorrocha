@@ -36,6 +36,13 @@
                     </div>
                 </a>
             </div>
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">
+                        <button type="button" class="btn btn-primary btn-lg">Login</button>
+                    </a>
+                </li>
+            </ul>
         </nav>
         <main class="content d-flex p-0">
             <div class="container d-flex flex-column">
@@ -44,7 +51,7 @@
                         <div class="d-table-cell align-middle">
                             <div class="text-center mt-4">
                                 <h1 class="h2">
-                                    Registrar-se
+                                    Cadastrar-se
                                 </h1>
                             </div>
                             <div class="card">

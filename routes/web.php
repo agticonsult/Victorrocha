@@ -17,12 +17,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return redirect()->route('login');
-// });
+Route::get('/', function () {
+    return redirect()->route('pessoa.create');
+});
 
 //Login
-Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/autenticacao', [LoginController::class, 'autenticacao'])->name('login.autenticacao');
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
