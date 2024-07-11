@@ -23,11 +23,6 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
 
-            $table->uuid('inativadoPorUsuario')->nullable();
-            $table->timestamp('dataInativado')->nullable();
-            $table->text('motivoInativado')->nullable();
-            $table->boolean('ativo')->default(User::ATIVO);
-
             $table->rememberToken();
             $table->timestamps();
         });

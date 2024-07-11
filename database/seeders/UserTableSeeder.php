@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -25,7 +26,7 @@ class UserTableSeeder extends Seeder
                 'name' => 'Agile',
                 'email' => 'suporte@agile.inf.br',
                 'password' => Hash::make('sup2011@'),
-                'ativo' => 1,
+                'ativo' => User::ATIVO,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ]
